@@ -7,6 +7,7 @@ interface SidebarProps {
   eventsPerMinute: number;
   isConnected: boolean;
   summary: EventSummary | null;
+  isPaused: boolean;
 }
 
 export const Sidebar = ({
@@ -14,9 +15,11 @@ export const Sidebar = ({
   eventsPerMinute,
   isConnected,
   summary,
+  isPaused,
 }: SidebarProps) => {
   return (
     <div className="w-80 bg-gray-50 p-6 flex flex-col gap-6 h-full">
+      <div className="flex items-center justify-between">
       <div className="flex items-center gap-2">
         <div
           className={`w-3 h-3 rounded-full ${
@@ -26,6 +29,12 @@ export const Sidebar = ({
         <span className="text-sm text-gray-600">
           {isConnected ? 'Connected' : 'Disconnected'}
         </span>
+        </div>
+        {isPaused && (
+          <span className="text-sm text-blue-600 font-medium">
+            Feed Paused
+          </span>
+        )}
       </div>
 
       <div className="bg-white rounded-lg p-4 shadow-sm">

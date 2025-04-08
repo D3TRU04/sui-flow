@@ -6,6 +6,7 @@ export const useWebSocket = (url: string) => {
   const [totalEvents, setTotalEvents] = useState(0);
   const [eventsPerMinute, setEventsPerMinute] = useState(0);
   const [isConnected, setIsConnected] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const ws = useRef<WebSocket | null>(null);
   const eventsInLastMinute = useRef<Event[]>([]);
   const lastMinuteTimer = useRef<NodeJS.Timeout | null>(null);
@@ -16,6 +17,13 @@ export const useWebSocket = (url: string) => {
       (event) => now - event.timestamp < 60000
     );
     setEventsPerMinute(eventsInLastMinute.current.length);
+  }, []);
+
+  const reset = useCallback(() => {
+    setEvents([]);
+    setTotalEvents(0);
+    setEventsPerMinute(0);
+    eventsInLastMinute.current = [];
   }, []);
 
   useEffect(() => {
@@ -30,6 +38,8 @@ export const useWebSocket = (url: string) => {
     };
 
     ws.current.onmessage = (event) => {
+      if (isPaused) return; // Don't process new events when paused
+      
       try {
         const newEvent: Event = JSON.parse(event.data);
         setEvents((prevEvents) => [newEvent, ...prevEvents]);
@@ -52,12 +62,15 @@ export const useWebSocket = (url: string) => {
         clearInterval(lastMinuteTimer.current);
       }
     };
-  }, [url, updateEventsPerMinute]);
+  }, [url, updateEventsPerMinute, isPaused]);
 
   return {
     events,
     totalEvents,
     eventsPerMinute,
     isConnected,
+    isPaused,
+    setIsPaused,
+    reset,
   };
 }; 
