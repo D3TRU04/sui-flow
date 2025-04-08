@@ -22,6 +22,10 @@ module.exports = {
       animation: {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
       },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+      },
     },
   },
   plugins: [],

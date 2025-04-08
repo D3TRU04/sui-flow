@@ -34,7 +34,7 @@ export default function StreamPage() {
   }, [events]);
 
   return (
-    <div className="flex h-[calc(100vh-8rem)]">
+    <div className="flex h-[calc(100vh-4rem)] bg-gray-50">
       <Sidebar
         totalEvents={totalEvents}
         eventsPerMinute={eventsPerMinute}
