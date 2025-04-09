@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventPulse - Real-time Event Streaming Platform
+
+EventPulse is a modern web application that provides real-time event streaming with AI-powered insights. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- Real-time event streaming with WebSocket integration
+- AI-powered event summarization
+- Live statistics and metrics
+- Pause/Resume and Reset functionality
+- Modern, responsive UI with smooth animations
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v18.0.0 or higher)
+- npm (v9.0.0 or higher) or yarn (v1.22.0 or higher)
+- Git
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd beeps-stream
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Install dependencies**
+   ```bash
+   # Using npm
+   npm install
+
+   # Or using yarn
+   yarn install
+   ```
+
+3. **Environment Setup**
+   Create a `.env.local` file in the root directory with the following variables:
+   ```
+   NEXT_PUBLIC_WS_URL=ws://beeps.gg/stream
+   ```
+
+4. **Run the development server**
+   ```bash
+   # Using npm
+   npm run dev
+
+   # Or using yarn
+   yarn dev
+   ```
+
+5. **Open your browser**
+   Visit `http://localhost:3000` to see the application running.
+
+## Project Structure
+
+```
+beeps-stream/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── (landing)/      # Landing page routes
+│   │   ├── stream/         # Stream page routes
+│   │   └── layout.tsx      # Root layout
+│   ├── components/         # React components
+│   ├── hooks/             # Custom React hooks
+│   ├── services/          # API and service functions
+│   ├── types/             # TypeScript type definitions
+│   └── styles/            # Global styles
+├── public/                # Static assets
+└── package.json          # Project dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Key dependencies used in this project:
+- `next`: 14.0.0
+- `react`: 18.2.0
+- `react-dom`: 18.2.0
+- `tailwindcss`: 3.3.0
+- `date-fns`: 2.30.0
+- `react-icons`: 4.11.0
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Common Issues and Solutions
 
-## Learn More
+1. **Dependency Installation Issues**
+   - If you encounter `node-gyp` errors, ensure you have Python and build tools installed:
+     ```bash
+     # On macOS
+     xcode-select --install
 
-To learn more about Next.js, take a look at the following resources:
+     # On Windows
+     npm install --global windows-build-tools
+     ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **WebSocket Connection Issues**
+   - Ensure the WebSocket URL is correctly set in `.env.local`
+   - Check if the WebSocket server is running and accessible
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Build Errors**
+   - Clear the Next.js cache:
+     ```bash
+     rm -rf .next
+     ```
+   - Reinstall dependencies:
+     ```bash
+     rm -rf node_modules
+     npm install
+     ```
 
-## Deploy on Vercel
+4. **TypeScript Errors**
+   - Ensure all TypeScript dependencies are installed:
+     ```bash
+     npm install --save-dev typescript @types/react @types/node
+     ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
