@@ -23,7 +23,7 @@ export const EventFeed = ({ events, isPaused, onPauseChange, onReset }: EventFee
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between px-6 py-6">
+      <div className="flex items-center justify-between px-4 py-3">
         <h2 className="text-lg font-semibold text-gray-800">Live Feed</h2>
         <div className="flex items-center gap-2">
           <button
@@ -54,12 +54,12 @@ export const EventFeed = ({ events, isPaused, onPauseChange, onReset }: EventFee
       
       <div 
         ref={containerRef}
-        className="flex flex-col gap-4 p-4 overflow-y-auto flex-1 scroll-smooth"
+        className="flex flex-col gap-3 px-4 pt-0 pb-4 overflow-y-auto flex-1 scroll-smooth"
       >
         {events.map((event, index) => (
           <div
             key={event.id}
-            className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-all duration-300 transform animate-fade-in-up"
+            className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-all duration-300 transform animate-fade-in-up"
             style={{
               animationDelay: `${index * 100}ms`,
               animationFillMode: 'both',

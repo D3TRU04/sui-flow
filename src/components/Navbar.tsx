@@ -52,7 +52,6 @@ export const Navbar = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative">
                     <FiZap className="h-6 w-6 text-blue-600 animate-pulse group-hover:scale-110 transition-transform duration-300" />
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
                   </div>
                   <span className="ml-2 text-xl font-semibold text-gray-800 relative">
                     <span className="text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Event</span>Pulse

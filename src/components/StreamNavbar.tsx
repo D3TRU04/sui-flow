@@ -15,7 +15,6 @@ export const StreamNavbar = () => {
             >
               <div className="relative">
                 <FiZap className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
               </div>
               <span className="ml-2 text-xl font-semibold text-gray-800">
                 <span className="text-blue-600">Event</span>Pulse

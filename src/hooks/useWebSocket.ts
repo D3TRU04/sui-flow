@@ -12,12 +12,14 @@ export const useWebSocket = (url: string) => {
   const lastMinuteTimer = useRef<NodeJS.Timeout | null>(null);
 
   const updateEventsPerMinute = useCallback(() => {
+    if (isPaused) return; // Don't update when paused
+    
     const now = Date.now();
     eventsInLastMinute.current = eventsInLastMinute.current.filter(
       (event) => now - event.timestamp < 60000
     );
     setEventsPerMinute(eventsInLastMinute.current.length);
-  }, []);
+  }, [isPaused]);
 
   const reset = useCallback(() => {
     setEvents([]);
