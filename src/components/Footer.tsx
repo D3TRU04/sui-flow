@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <FiZap className="h-5 w-5 text-blue-600" />
             <span className="text-xl font-semibold">
-              <span className="text-blue-600">Event</span>Pulse
+              <span className="text-blue-600">Sui</span>Flow
             </span>
           </div>
 
@@ -31,8 +31,8 @@ export const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-gray-600 text-sm">
-            © 2025 EventPulse. Made for beeps.
+          <div className="text-sm text-gray-500">
+            © 2025 SuiFlow. Made for beeps.
           </div>
         </div>
       </div>

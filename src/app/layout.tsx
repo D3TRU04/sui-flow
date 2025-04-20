@@ -1,28 +1,34 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
 import './globals.css';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import { usePathname } from 'next/navigation';
+import { ThemeProvider } from '@/components/theme-provider';
+import { WalletProvider } from '@/components/wallet-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'EventPulse',
-  description: 'Real-time event streaming platform',
+  title: 'SuiFlow - Visual Smart Contract Builder',
+  description: 'Build and deploy Sui smart contracts with a visual drag-and-drop interface',
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <WalletProvider>
+            {children}
+          </WalletProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

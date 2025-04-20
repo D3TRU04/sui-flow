@@ -1,6 +1,6 @@
-# EventPulse - Real-time Event Streaming Platform
+# SuiFlow - Visual Smart Contract Builder for Sui
 
-EventPulse is a modern web application that provides real-time event streaming with AI-powered insights. Built with Next.js, TypeScript, and Tailwind CSS.
+SuiFlow is a modern web application that provides a visual interface for building and deploying smart contracts on the Sui blockchain. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 

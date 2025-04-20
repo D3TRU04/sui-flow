@@ -1,5 +1,5 @@
 {
-  "name": "beeps-stream",
+  "name": "sui-flow",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.8.0",
+    "@mysten/sui.js": "^0.48.0",
+    "@mysten/wallet-kit": "^0.7.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "date-fns": "^2.30.0",
     "framer-motion": "^11.18.2",
-    "geist": "^1.3.1",
+    "lucide-react": "^0.331.0",
     "next": "14.1.0",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flow-renderer": "^10.3.17",
     "react-icons": "^5.0.1",
-    "recharts": "^2.12.0",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

@@ -54,7 +54,7 @@ export const Navbar = () => {
                     <FiZap className="h-6 w-6 text-blue-600 animate-pulse group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <span className="ml-2 text-xl font-semibold text-gray-800 relative">
-                    <span className="text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Event</span>Pulse
+                    <span className="text-blue-600 group-hover:text-blue-500 transition-colors duration-300">Sui</span>Flow
                   </span>
                 </Link>
               </div>
